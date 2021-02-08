@@ -1,13 +1,13 @@
 class DBConfig {
   private static instance: DBConfig;
 
-  private type: string;
-  private host: string;
-  private port: number;
-  private username: string;
-  private password: string;
-  private database: string;
-  private entities: Array<unknown>;
+  private readonly type: string;
+  private readonly host: string;
+  private readonly port: number;
+  private readonly username: string;
+  private readonly password: string;
+  private readonly database: string;
+  private readonly entities: Array<unknown>;
   private synchronize: boolean;
 
   private constructor() {

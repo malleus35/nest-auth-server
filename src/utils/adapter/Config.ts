@@ -1,7 +1,7 @@
-import Module from './Module';
+import ModuleInfo from './ModuleInfo';
 import DBConfig from '../db/DBConfig';
 
-class Config extends Module {
+class Config extends ModuleInfo {
   private static instance: Config;
   private constructor() {
     super();
