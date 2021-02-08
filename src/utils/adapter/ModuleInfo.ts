@@ -7,6 +7,7 @@ import {
 } from '@nestjs/common';
 import { ModuleMetadata } from '@nestjs/common';
 
+//TODO Make ModuleInfo to have fields selective
 class ModuleInfo implements ModuleMetadata {
   public readonly providers?: Array<Provider<any>>;
   public readonly imports?: Array<
