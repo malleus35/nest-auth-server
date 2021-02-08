@@ -1,10 +1,5 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication, Module } from '@nestjs/common';
-import * as request from 'supertest';
-
 import { AppService } from '../../src/app.service';
 import { AppController } from '../../src/app.controller';
-import { AppModule } from '../../src/app.module';
 import ModuleInfo from '../../src/utils/adapter/ModuleInfo';
 
 describe('Test Module Class', () => {
@@ -23,18 +18,17 @@ describe('Test Module Class', () => {
     expect(appModuleInfo.providers).toEqual([AppService]);
   });
 
-  it.skip('test to be in module parameter is equal Object', () => {
-    expect(appModuleInfo).toEqual({
+  it('test to be in module parameter is equal Object', () => {
+    const originModuleInfo = {
       imports: [],
       controllers: [AppController],
       providers: [AppService],
-    });
-  });
+    };
 
-  it.skip('test to right Module definition', () => {
-    const mockModuleDefinition = jest.fn(Module);
+    expect(appModuleInfo).toHaveProperty('controllers', [AppController]);
+    expect(appModuleInfo).toHaveProperty('providers', [AppService]);
 
-    @mockModuleDefinition(appModuleInfo)
-    class MockAppModule {}
+    expect(originModuleInfo).toHaveProperty('controllers', [AppController]);
+    expect(originModuleInfo).toHaveProperty('providers', [AppService]);
   });
 });
