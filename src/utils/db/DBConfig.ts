@@ -1,53 +1,4 @@
-class Module {
-  protected readonly providers: Array<unknown>;
-  protected readonly controllers: Array<unknown>;
-  protected readonly imports: Array<unknown>;
-  protected readonly exports: Array<unknown>;
-
-  constructor() {
-    this.providers = [];
-    this.controllers = [];
-    this.imports = [];
-    this.exports = [];
-  }
-
-  public pushToProviders(provider: unknown): void {
-    this.providers.push(provider);
-  }
-
-  public pushToControllers(controller: unknown): void {
-    this.controllers.push(controller);
-  }
-
-  public pushToImports(importItem: unknown): void {
-    this.imports.push(importItem);
-  }
-
-  public pushToExports(exportItem: unknown): void {
-    this.exports.push(exportItem);
-  }
-}
-
-export class Config extends Module {
-  private static instance: Config;
-  private constructor() {
-    super();
-    this.pushToImports(DBConfig.getInstance());
-  }
-
-  public static getInstance(): Config {
-    if (Config.instance == null) Config.getSingleton();
-    return Config.instance;
-  }
-
-  private static getSingleton(): void {
-    if (Config.instance == null) {
-      Config.instance = new this();
-    }
-  }
-}
-
-export class DBConfig {
+class DBConfig {
   private static instance: DBConfig;
 
   private type: string;
@@ -89,3 +40,5 @@ export class DBConfig {
     this.synchronize = this.synchronize ? false : true;
   }
 }
+
+export default DBConfig;
