@@ -57,4 +57,8 @@ export class DBConfig {
   public pushToEntities(entity: unknown): void {
     this.entities.push(entity);
   }
+
+  public changeSyncronize(): void {
+    this.synchronize = this.synchronize ? false : true;
+  }
 }
