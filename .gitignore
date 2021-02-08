@@ -35,6 +35,7 @@ lerna-debug.log*
 
 # envs
 /envs
+ormconfig.json
 
 # kubernetes object
 /kube
