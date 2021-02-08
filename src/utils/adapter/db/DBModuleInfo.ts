@@ -1,9 +1,9 @@
-import ModuleInfo from '../adapter/ModuleInfo';
+import ModuleInfo from '../ModuleInfo';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EntityClassOrSchema } from '@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type';
 
 //TODO TypeOrmModule에서 원하는 데이터베이스에 따라서 선택적으로
-class DBConfig extends ModuleInfo {
+class DBModuleInfo extends ModuleInfo {
   constructor() {
     super();
   }
@@ -22,4 +22,4 @@ class DBConfig extends ModuleInfo {
   }
 }
 
-export default DBConfig;
+export default DBModuleInfo;
