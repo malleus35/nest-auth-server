@@ -7,7 +7,7 @@ declare namespace NodeJS {
     DB_PASSWORD: string;
     DB_HOST: string;
     DB_PORT: string;
-    DB_TYPE: string;
+    DB_TYPE: 'mysql' | 'mariadb' | 'postgres' | 'mongodb';
 
     REDIS_HOST: string;
     REDIS_PORT: string;
