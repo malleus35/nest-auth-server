@@ -1,6 +1,6 @@
 import passport from 'passport';
 import { ExtractJwt, JwtFromRequestFunction, Strategy } from 'passport-jwt';
-import { User } from 'src/User/user.entity';
+import { User } from 'src/users/user.entity';
 import { Repository } from 'typeorm';
 import JWTPassportOpts from './JWTPassportOpts';
 

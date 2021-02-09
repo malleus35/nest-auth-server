@@ -8,7 +8,8 @@ const ORMConfig: TypeOrmModuleOptions = {
   password: process.env.DB_PASSWORD,
   database: process.env.DATABASE,
   entities: [],
-  synchronize: false,
+  synchronize: true,
+  logging: true,
 };
 
 export default ORMConfig;

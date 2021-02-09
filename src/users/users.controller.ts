@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Headers, Body, Delete } from '@nestjs/common';
-import { SignInDto } from 'src/dto/SignInDto';
-import { SignUpDto } from 'src/dto/SignUpDto';
+import { SignInDto } from './dto/SignInDto';
+import { SignUpDto } from './dto/SignUpDto';
 import { User } from './user.entity';
 import { UsersService } from './users.service';
 
