@@ -1,28 +1,28 @@
-import { Controller, Get, Post, Req } from '@nestjs/common';
+import { Controller, Get, Post, Headers, Body, Delete } from '@nestjs/common';
+import { SignInDto } from 'src/dto/SignInDto';
+import { SignUpDto } from 'src/dto/SignUpDto';
 import { User } from './user.entity';
 import { UsersService } from './users.service';
 
-@Controller()
+@Controller('users')
 export class UsersController {
   constructor(private readonly userService: UsersService) {}
 
-  @Get()
-  async getAllUser(): Promise<User[]> {
-    return this.userService.findAll();
-  }
+  @Get('verify')
+  async verify(@Headers('authorization') token: string): Promise<void> {}
 
-  @Get()
-  async getOneUser(): Promise<void> {}
+  @Post('signin')
+  async signIn(@Body() signInBody: SignInDto): Promise<void> {}
 
   @Post()
-  async signIn(): Promise<void> {}
+  async signUp(@Body() signUpBody: SignUpDto): Promise<void> {}
 
   @Post()
-  async signUp(): Promise<void> {}
+  async logOut(@Headers('authorization') token: string): Promise<void> {}
 
-  @Get()
-  async verify(): Promise<void> {}
+  @Post('refresh')
+  async refresh(@Headers('authorization') token: string): Promise<void> {}
 
-  @Get()
-  async refresh(): Promise<void> {}
+  @Delete()
+  async delete(@Headers('authorization') token: string): Promise<void> {}
 }
